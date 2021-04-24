@@ -1,5 +1,6 @@
 import React from 'react';
 import Average from './Average';
+import Info from './Info';
 
 const App = () => {
 	// const [visible, setVisible] = useState(false);
@@ -16,7 +17,7 @@ const App = () => {
 	// 		{visible && <Info />}
 	// 	</div>
 	// );
-	return <Average />;
+	return <Info />;
 };
 
 export default App;

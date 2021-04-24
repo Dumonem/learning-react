@@ -1,39 +1,18 @@
 import React, { useEffect, useReducer } from 'react';
-
-function reducer(state, action) {
-	return {
-		...state,
-		[action.name]: action.value,
-	};
-}
+import useInputs from './useInputs';
 
 const Info = () => {
-	const [state, dispatch] = useReducer(reducer, {
+	const [state, onChange] = useInputs({
 		name: '',
 		nickname: '',
 	});
 	const { name, nickname } = state;
 
-	useEffect(() => {
-		console.log('effect');
-		return () => {
-			console.log('unmount');
-		};
-	}, []);
-
-	const onChangeName = (e) => {
-		dispatch(e.target);
-	};
-
-	const onChangeNickname = (e) => {
-		dispatch(e.target);
-	};
-
 	return (
 		<div>
 			<div>
-				<input name="name" value={name} onChange={onChangeName} />
-				<input name="nickname" value={nickname} onChange={onChangeNickname} />
+				<input name="name" value={name} onChange={onChange} />
+				<input name="nickname" value={nickname} onChange={onChange} />
 			</div>
 			<div>
 				<div>
