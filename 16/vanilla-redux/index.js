@@ -1,9 +1,9 @@
-import { creatStore } from 'redux';
+import { createStore } from 'redux';
 
 const divToggle = document.querySelector('.toggle');
 const counter = document.querySelector('h1');
-const btnIncrease = document.querySelector('.increase');
-const btnDecrease = document.querySelector('.decrease');
+const btnIncrease = document.querySelector('#increase');
+const btnDecrease = document.querySelector('#decrease');
 
 const TOGGLE_SWITCH = 'TOGGLE_SWITCH';
 const INCREASE = 'INCREASE';
@@ -40,10 +40,10 @@ function reducer(state = initialState, action) {
 	}
 }
 
-const store = creatStore(reducer);
+const store = createStore(reducer);
 
 const render = () => {
-	const state = store.getStore();
+	const state = store.getState();
 
 	if (state.toggle) {
 		divToggle.classList.add('active');
@@ -54,3 +54,14 @@ const render = () => {
 };
 
 render();
+store.subscribe(render);
+
+divToggle.onclick = () => {
+	store.dispatch(toggleSwitch());
+};
+btnIncrease.onclick = () => {
+	store.dispatch(increase(1));
+};
+btnDecrease.onclick = () => {
+	store.dispatch(decrease());
+};
