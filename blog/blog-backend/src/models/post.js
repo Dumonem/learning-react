@@ -1,6 +1,6 @@
-import mongoose from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 
-const PostSchema = new mongoose.Schema({
+const PostSchema = new Schema({
 	title: String,
 	body: String,
 	tags: [String], //문자열로 이루어진 배열

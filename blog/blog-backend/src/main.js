@@ -1,3 +1,5 @@
+import jwtMiddleware from './lib/jwtMiddleware';
+
 require('dotenv').config();
 import Koa from 'koa';
 import Router from 'koa-router';
@@ -27,6 +29,7 @@ const router = new Router();
 router.use('/api', api.routes());
 
 app.use(bodyParser());
+app.use(jwtMiddleware);
 
 app.use(router.routes()).use(router.allowedMethods());
 
