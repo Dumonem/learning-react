@@ -72,7 +72,7 @@ export const login = async (ctx) => {
 };
 
 export const check = async (ctx) => {
-	const { user } = ctx.status;
+	const { user } = ctx.state;
 	if (!user) {
 		//로그인중아님
 		ctx.status = 401;
