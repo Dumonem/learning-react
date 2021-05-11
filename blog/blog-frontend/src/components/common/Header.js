@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Responseive from './Responseive';
+import Responsive from './Responsive';
 import Button from './Button';
 import { Link } from 'react-router-dom';
 
@@ -11,7 +11,7 @@ const HeaderBlock = styled.div`
 	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
 `;
 
-const Wrapper = styled(Responseive)`
+const Wrapper = styled(Responsive)`
 	height: 4rem;
 	display: flex;
 	align-items: center;
