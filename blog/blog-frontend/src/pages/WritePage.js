@@ -1,8 +1,8 @@
 import React from 'react';
 import Responsive from '../components/common/Responsive';
-import EditorContainer from '../components/write/EditorContainer';
-import TagBoxContainer from '../components/write/TagBoxContainer';
-import WriteActionsButtonsContainer from '../components/write/WriteActionsButtonsContainer';
+import EditorContainer from '../containers/write/EditorContainer';
+import TagBoxContainer from '../containers/write/TagBoxContainer';
+import WriteActionsButtonsContainer from '../containers/write/WriteActionsButtonsContainer';
 
 const WritePage = () => {
 	return (

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { writePost } from '../../modules/write';
-import WriteActionsButtons from './WriteActionsButtons';
+import WriteActionsButtons from '../../components/write/WriteActionsButtons';
 
 const WriteActionsButtonsContainer = ({ history }) => {
 	const dispatch = useDispatch();
