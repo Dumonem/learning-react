@@ -160,7 +160,7 @@ export const update = async (ctx) => {
 		return;
 	}
 
-	const nextData = { ...ctx.response.body }; //객체를 복사하고
+	const nextData = { ...ctx.request.body }; //객체를 복사하고
 	//body 값이 주어졌으면 HTML필터링
 	if (nextData.body) {
 		nextData.body = sanitizeHtml(nextData.body, sanitizeOption);
@@ -183,7 +183,7 @@ export const update = async (ctx) => {
 
 export const checkOwnPost = (ctx, next) => {
 	const { user, post } = ctx.state;
-	if (post.user._id.toString() !== user.id) {
+	if (post.user._id.toString() !== user._id) {
 		ctx.status = 403;
 		return;
 	}
